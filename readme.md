@@ -1,5 +1,5 @@
 ## ADMIN
-email : admin@amin.com
+email : admin@admin.com
 
 pass : asdqwe123
 

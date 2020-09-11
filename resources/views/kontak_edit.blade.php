@@ -5,7 +5,7 @@
         <!-- Add Your Content Inside -->
         <div class="content">
             <!-- Remove This Before You Start -->
-            <h1>Anak IT -  Edit Kontak</h1>
+            <h1>Edit Product</h1>
             <hr>
             @foreach($data as $datas)
             <form action="{{ route('kontak.update', $datas->id) }}" method="post">
@@ -16,15 +16,15 @@
                     <input type="text" class="form-control" id="usr" name="nama" value="{{ $datas->nama }}">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email">Harga:</label>
                     <input type="email" class="form-control" id="email" name="email" value="{{ $datas->email }}">
                 </div>
                 <div class="form-group">
-                    <label for="nohp">No Hp:</label>
+                    <label for="nohp">Deskripsi:</label>
                     <input type="text" class="form-control" id="nohp" name="nohp" value="{{ $datas->nohp }}">
                 </div>
                 <div class="form-group">
-                    <label for="alamat">Alamat:</label>
+                    <label for="alamat">Gambar:</label>
                     <textarea class="form-control" id="alamat" name="alamat">{{ $datas->alamat }}</textarea>
                 </div>
                 <div class="form-group">

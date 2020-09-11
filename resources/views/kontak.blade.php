@@ -5,7 +5,7 @@
         <!-- Add Your Content Inside -->
         <div class="content">
             <!-- Remove This Before You Start -->
-            <h1>Anak IT -  Table Kontak</h1>
+            <h1>Table Product</h1>
             @if(Session::has('alert-success'))
                 <div class="alert alert-success">
                     <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
@@ -17,9 +17,9 @@
                 <tr>
                     <th>No.</th>
                     <th>Nama</th>
-                    <th>Email</th>
-                    <th>No. HP</th>
-                    <th>Alamat</th>
+                    <th>Harga</th>
+                    <th>Deskripsi</th>
+                    <th>Gambar</th>
                     <th>Aksi</th>
                 </tr>
                 </thead>
@@ -29,9 +29,9 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $datas->nama }}</td>
-                        <td>{{ $datas->email }}</td>
-                        <td>{{ $datas->nohp }}</td>
-                        <td>{{ $datas->alamat }}</td>
+                        <td>Rp. {{ $datas->harga }}</td>
+                        <td>{{ $datas->deskripsi }}</td>
+                        <td>{{ $datas->image }}</td>
                         <td>
                             <form action="{{ route('kontak.destroy', $datas->id) }}" method="post">
                                 {{ csrf_field() }}

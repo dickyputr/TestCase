@@ -13,7 +13,7 @@
     <!-- Canonical -->
     <link rel="canonical" href="">
 
-    <title>Latihan Laravel 5.4 - Anak IT</title>
+    <title>List Product</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -40,13 +40,18 @@
         <ul class="main-nav">
             <!-- Your Logo Or Site Name -->
             <li class="nav-brand">
-                <a href="/">Anak IT - Home</a>
+                <a href="/">List Product</a>
+            </li>
+            @if (Auth::user() != null)
+            <li>
+                <a href={{route('kontak.create')}}>- Tambah Product</a>
             </li>
             <li>
-                <a href="#">- Tambah Kontak</a>
+                <a href={{route('kontak.index')}}>- Daftar Product</a>
             </li>
+            @endif
             <li>
-                <a href="#">- Daftar Kontak</a>
+                <a href="login">- Login</a>
             </li>
         </ul>
     </aside>

@@ -5,7 +5,7 @@
         <!-- Add Your Content Inside -->
         <div class="content">
             <!-- Remove This Before You Start -->
-            <h1>Anak IT -  Tambah Kontak</h1>
+            <h1>Tambah Product</h1>
             <hr>
             <form action="{{ route('kontak.store') }}" method="post">
                 {{ csrf_field() }}
@@ -14,16 +14,16 @@
                     <input type="text" class="form-control" id="usr" name="nama">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <label for="email">Harga:</label>
+                    <input type="text" class="form-control" id="harga" name="harga">
                 </div>
                 <div class="form-group">
-                    <label for="nohp">No Hp:</label>
-                    <input type="text" class="form-control" id="nohp" name="nohp">
+                    <label for="nohp">Deskripsi:</label>
+                    <input type="text" class="form-control" id="deskripsi" name="deskripsi">
                 </div>
                 <div class="form-group">
-                    <label for="alamat">Alamat:</label>
-                    <textarea class="form-control" id="alamat" name="alamat"></textarea>
+                    <label for="alamat">Gambar:</label>
+                        <input id="image" type="file" name="image">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>

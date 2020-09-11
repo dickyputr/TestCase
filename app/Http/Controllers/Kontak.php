@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ModelKontak;
+use App\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,14 @@ class Kontak extends Controller
      */
     public function index()
     {
-        $data = ModelKontak::all();
+        $data = Product::all();
         return view('kontak',compact('data'));
     }
 
+    public function login()
+    {
+        return view('login');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,11 +42,11 @@ class Kontak extends Controller
      */
     public function store(Request $request)
     {
-        $data = new ModelKontak();
+        $data = new Product();
         $data->nama = $request->nama;
-        $data->email = $request->email;
-        $data->nohp = $request->nohp;
-        $data->alamat = $request->alamat;
+        $data->harga = $request->harga;
+        $data->deskripsi = $request->deskripsi;
+        $data->image = $request->image;
         $data->save();
         return redirect()->route('kontak.index')->with('alert-success','Berhasil Menambahkan Data!');
     }
@@ -65,7 +70,7 @@ class Kontak extends Controller
      */
     public function edit($id)
     {
-        $data = ModelKontak::where('id',$id)->get();
+        $data = Product::where('id',$id)->get();
 
         return view('kontak_edit',compact('data'));
     }
@@ -79,11 +84,11 @@ class Kontak extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = ModelKontak::where('id',$id)->first();
+        $data = Product::where('id',$id)->first();
         $data->nama = $request->nama;
-        $data->email = $request->email;
-        $data->nohp = $request->nohp;
-        $data->alamat = $request->alamat;
+        $data->harga = $request->harga;
+        $data->deskripsi = $request->deskripsi;
+        $data->image = $request->image;
         $data->save();
         return redirect()->route('kontak.index')->with('alert-success','Data berhasil diubah!');
     }
@@ -97,7 +102,7 @@ class Kontak extends Controller
      */
     public function destroy($id)
     {
-        $data = ModelKontak::where('id',$id)->first();
+        $data = Product::where('id',$id)->first();
         $data->delete();
         return redirect()->route('kontak.index')->with('alert-success','Data berhasi dihapus!');
     }
